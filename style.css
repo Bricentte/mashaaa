@@ -1,38 +1,67 @@
 body {
-    font-family: Arial, sans-serif; 
-    text-align: center; 
-    margin: 0; 
-    background-color: #FADADD; 
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #FADADD;
 }
 
 #container {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Usando min-height para garantir que o container ocupe pelo menos a altura da tela */
+    padding: 20px; /* Adicionando um pouco de espaço ao redor do conteúdo */
 }
 
 #image-container {
-    
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura da tela */
 }
 
 #question {
-    font-family: 'Sacramento', cursive; 
-    font-size: 52px; 
+    font-family: 'Sacramento', cursive;
+    font-size: 52px;
+    margin: 20px 0; /* Adiciona margem para evitar que o texto fique muito próximo de outros elementos */
 }
 
 #options {
-    margin-top: 20px; 
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Coloca os botões em coluna para telas menores */
+    gap: 10px; /* Adiciona espaço entre os botões */
 }
 
 button {
-    padding: 10px 20px; 
-    margin: 0 10px; 
-    font-size: 26px; 
-    font-family: 'Sacramento', cursive; 
-    background-color: #FB607F; 
-    color: white; 
-    border: none; 
-    cursor: pointer; 
+    padding: 10px 20px;
+    font-size: 26px;
+    font-family: 'Sacramento', cursive;
+    background-color: #FB607F;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Faz os botões ocuparem a largura total do container */
+    max-width: 300px; /* Define uma largura máxima para os botões */
+}
+
+/* Media Queries para telas menores (celulares) */
+@media (max-width: 768px) {
+    #question {
+        font-size: 36px; /* Reduz o tamanho da fonte para telas menores */
+    }
+
+    button {
+        font-size: 20px; /* Reduz o tamanho da fonte dos botões */
+        padding: 8px 16px; /* Ajusta o padding para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    #question {
+        font-size: 28px; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+    }
+
+    button {
+        font-size: 18px; /* Reduz o tamanho da fonte dos botões */
+        padding: 6px 12px; /* Ajusta o padding para telas muito pequenas */
+    }
 }
